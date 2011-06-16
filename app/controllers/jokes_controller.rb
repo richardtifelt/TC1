@@ -18,9 +18,9 @@ class JokesController < ApplicationController
   end
 
   def update
-    joke = Joke.find(params[:id])
+    joke = Joke.find(params[:joke_id])
     screen_name = params[:screen_name]
-    url = show_joke_url(joke)
+    url = joke_url(joke)
     client.update("@#{screen_name} Du har fått ett Göteborgskämt! #{url}")
     flash[:notice] = "Skämt skickat!"
     redirect_to root_path

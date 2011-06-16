@@ -1,18 +1,15 @@
 <h1 id="fittext"><%= @joke.joke %></h1>
 <div class="actions">
-    
     <% if @friends %>
         <% form_tag 'update' do %>
             <%= hidden_field_tag(:joke_id, @joke.id) %>
-            <p>
-                Välj vän: 
-                <select name="screen_name">
-                    <% @friends.each do |friend| %>
-                        <option value="<%= friend[1] %>"><%= friend[0] %> (@<%= friend[1] %>)</option>
-                    <% end %>
-                </select>
-            </p>
-            <%= submit_tag("GO") %>
+            Välj vän: 
+            <select name="screen_name">
+                <% @friends.each do |friend| %>
+                    <option value="<%= friend[1] %>"><%= friend[0] %> (@<%= friend[1] %>)</option>
+                <% end %>
+            </select>
+            <%= submit_tag("Skicka") %>
         <% end %>
     <% else %>
         <a href="/" class="primary">Få nytt skämt!</a>
@@ -21,5 +18,4 @@
 
     <!-- <input type="text" placeholder="Skriv in twitternamet på din kompis">
     <input type="submit" value="Tweet it!"> -->
->>>>>>> Post joke and tweet it
 </div>
