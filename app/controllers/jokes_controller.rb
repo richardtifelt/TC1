@@ -2,7 +2,7 @@ class JokesController < ApplicationController
   # GET /jokes
   # GET /jokes.xml
   def index
-    @jokes = Joke.all
+    @joke = Joke.find(all_ids[rand(Joke.count)])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +79,10 @@ class JokesController < ApplicationController
       format.html { redirect_to(jokes_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  def all_ids
+    @all = Joke.all.map(&:id)
   end
 end

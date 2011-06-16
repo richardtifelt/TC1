@@ -1,28 +1,21 @@
-<h1>Listing jokes</h1>
-
-<table>
-  <tr>
-    <th>Joke</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @jokes.each do |joke| %>
-  <tr>
-    <td><%= joke.joke %></td>
-    <td><%= link_to 'Show', joke %></td>
-    <td><%= link_to 'Edit', edit_joke_path(joke) %></td>
-    <td><%= link_to 'Destroy', joke, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Joke', new_joke_path %>
-
-<p>
-    Först, 
-    <%= link_to("Logga in med Twitter", "/auth/twitter") %>
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tc1</title>
+    <link rel="stylesheet" href="tc1.css" type="text/css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <article>
+        <h1><pre><%= @joke.joke %></pre></h1>
+        <p>
+            
+        </p>
+		<p>
+		    Först, 
+		    <%= link_to("Logga in med Twitter", "/auth/twitter") %>
+		</p>
+    </article>
+</body>
+</html>
