@@ -160,3 +160,9 @@ input[type="submit"].primary{
     -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(250, 250, 250, 0.4);
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(250, 250, 250, 0.4);
 }
+a.primary:hover,
+input[type="button"].primary:hover,
+input[type="submit"].primary:hover;{
+    cursor: pointer;
+    background: #6aa417;    
+}
