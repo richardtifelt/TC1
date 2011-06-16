@@ -17,4 +17,9 @@
         <a href="/" class="primary">Få nytt skämt!</a>
         <%= link_to("Skicka skämt till en Twitter-kompis!", "/auth/twitter", :class => "button") %>
     <% end %>
+    
+</div>
+
+<div class="facebook_like">
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=225510640812214&amp;href=<%= url_encode(joke_url(@joke)) %>&amp;send=false&amp;layout=standard&amp;width=300&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:80px;" allowTransparency="true"></iframe>    
 </div>
