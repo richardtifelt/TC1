@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Joke:</b>
-	<pre><%= @joke.joke %></pre>
-</p>
-
-<br/>
-<br/>
-<%= link_to 'Edit', edit_joke_path(@joke) %> |
-<%= link_to 'Back', jokes_path %>
+<h1 id="fittext"><%= @joke.joke %></h1>
+<div class="actions">
+    <input type="button" value="Twittra din kompis!">
+</div>
+<div class="actions">
+    <input type="text" placeholder="Skriv in twitternamet på din kompis">
+    <input type="submit" value="Tweet it!">
+    <%= link_to("Tråka ut din vän via Twitter", "/auth/twitter", :class => "button") %>
+</div>
