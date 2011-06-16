@@ -6,6 +6,7 @@ Tc1::Application.routes.draw do
   match 'auth/failure', :controller => 'auth', :action => 'failed'
   
   match 'update', :controller => 'jokes', :action => 'update'
+  match 'logout', :controller => 'jokes', :action => 'logout'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

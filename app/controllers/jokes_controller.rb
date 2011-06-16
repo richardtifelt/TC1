@@ -97,6 +97,12 @@ class JokesController < ApplicationController
     end
   end
   
+  def logout
+    session.delete(:twitter_credentials)
+    flash[:message] = "Du loggades ut från Twitter!"
+    redirect_to :back
+  end
+  
   private
   def random_id
     Joke.all.map(&:id)[rand(Joke.count)]
