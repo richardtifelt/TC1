@@ -9,6 +9,5 @@ TrainChallange = (function(){
     }
 })();
 $(document).ready(function(){
-    console.log("test");
    TrainChallange.init();
 });
