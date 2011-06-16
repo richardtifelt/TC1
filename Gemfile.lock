@@ -135,7 +135,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  heroku
+  heroku (~> 2.3.0)
   omniauth (~> 0.2.6)
   rails (= 3.0.8)
   sqlite3
