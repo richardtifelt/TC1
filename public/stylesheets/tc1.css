@@ -57,7 +57,6 @@ a{
     color:#3d9bbc;
 }
 header{
-    line-height:60px;
     background:#1D1C1A;
     /*background: #7abfd6;
     background: -moz-linear-gradient(#1D1C1A, #32302d);
@@ -66,7 +65,9 @@ header{
     color:#fff;
 }
 header h1{
-    padding-left:10%;
+    line-height:70px;
+    background:url(/images/gbg.png) no-repeat 10px 10px;
+    padding-left:86px;
 }
 header h1 span{
     font-style:italic;
