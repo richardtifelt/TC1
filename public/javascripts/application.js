@@ -4,6 +4,7 @@ TrainChallange = (function(){
     };
     return{
         init:function(){
+            setEvents();
             setText();
         }
     }
