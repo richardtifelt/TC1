@@ -4,8 +4,8 @@ class JokesController < ApplicationController
   # GET /jokes
   # GET /jokes.xml
   def index
-    @joke = Joke.find(all_ids[rand(Joke.count)])
-
+    @joke = Joke.find(params[:joke_id] || random_id)
+    session[:joke_id] = @joke.id
     if session[:twitter_credentials]
       @friends = client.friends.map{|f| [f['name'], f['screen_name']] }
       @friends.sort!{|a,b| a[0] <=> b[0] }
@@ -98,8 +98,8 @@ class JokesController < ApplicationController
   end
   
   private
-  def all_ids
-    @all = Joke.all.map(&:id)
+  def random_id
+    Joke.all.map(&:id)[rand(Joke.count)]
   end
   
   def client
