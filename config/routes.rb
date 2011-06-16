@@ -1,4 +1,6 @@
 Tc1::Application.routes.draw do
+  resources :jokes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
