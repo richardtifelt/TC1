@@ -1,4 +1,5 @@
 Tc1::Application.routes.draw do
+  root :controller => "jokes", :action => "index"
   resources :jokes
   # The priority is based upon order of creation:
   # first created -> highest priority.
