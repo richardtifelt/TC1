@@ -2,9 +2,10 @@
 
 <p>
   <b>Joke:</b>
-  <%= @joke.joke %>
+	<pre><%= @joke.joke %></pre>
 </p>
 
-
+<br/>
+<br/>
 <%= link_to 'Edit', edit_joke_path(@joke) %> |
 <%= link_to 'Back', jokes_path %>
