@@ -78,6 +78,7 @@ article{
     margin:0 auto;
 }
 article h1{
+    font-style:italic;
     font-size:320%;
     font-weight:bold;
     text-shadow:#f5f5ed 5px 5px 0;
@@ -110,7 +111,9 @@ input[type="text"]:focus{
     -webkit-box-shadow: inset 0 1px 2px rgba(70,110,187,.2);
     box-shadow: inset 0 1px 2px rgba(70,110,187,.2);
 }
+a.button,
 input[type="button"], input[type="submit"]{
+    text-decoration:none;
     margin: 0 6px 15px 0;
     padding: 6px 10px;
     color: #fff;
@@ -130,7 +133,7 @@ input[type="button"], input[type="submit"]{
     font-size: 30px;
     line-height: 100%;
 }
-
+a.button:hover,
 input[type="button"]:hover, input[type="submit"]:hover{
     cursor: pointer;
     background: #33a2bc;
