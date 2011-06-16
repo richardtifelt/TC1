@@ -1,13 +1,29 @@
+# encoding: utf-8
+
 class JokesController < ApplicationController
   # GET /jokes
   # GET /jokes.xml
   def index
     @joke = Joke.find(all_ids[rand(Joke.count)])
 
+    if session[:twitter_credentials]
+      @friends = client.friends.map{|f| [f['name'], f['screen_name']] }
+      @friends.sort!{|a,b| a[0] <=> b[0] }
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @jokes }
     end
+  end
+
+  def update
+    joke = Joke.find(params[:id])
+    screen_name = params[:screen_name]
+    url = show_joke_url(joke)
+    client.update("@#{screen_name} Du har fått ett Göteborgskämt! #{url}")
+    flash[:notice] = "Skämt skickat!"
+    redirect_to root_path
   end
 
   # GET /jokes/1
@@ -55,19 +71,19 @@ class JokesController < ApplicationController
 
   # PUT /jokes/1
   # PUT /jokes/1.xml
-  def update
-    @joke = Joke.find(params[:id])
-
-    respond_to do |format|
-      if @joke.update_attributes(params[:joke])
-        format.html { redirect_to(@joke, :notice => 'Joke was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @joke.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   @
+  # 
+  #   respond_to do |format|
+  #     if @joke.update_attributes(params[:joke])
+  #       format.html { redirect_to(@joke, :notice => 'Joke was successfully updated.') }
+  #       format.xml  { head :ok }
+  #     else
+  #       format.html { render :action => "edit" }
+  #       format.xml  { render :xml => @joke.errors, :status => :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /jokes/1
   # DELETE /jokes/1.xml
@@ -84,5 +100,13 @@ class JokesController < ApplicationController
   private
   def all_ids
     @all = Joke.all.map(&:id)
+  end
+  
+  def client
+    @client ||= TwitterOAuth::Client.new(
+      :consumer_key => AppConfig['twitter']['key'], 
+      :consumer_secret => AppConfig['twitter']['secret'], 
+      :token => session['twitter_credentials']['token'],
+      :secret => session['twitter_credentials']['secret'])
   end
 end

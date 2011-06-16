@@ -1,9 +1,6 @@
 class AuthController < ApplicationController
   def redirect
-    session[:credentials] = request.env["omniauth.auth"]["credentials"]
-    
-    Rails.logger.info("-------------------- #{auth.inspect}")
-    session[:twitter_user] = 123
+    session['twitter_credentials'] = request.env["omniauth.auth"]["credentials"]
     redirect_to root_path
   end
   
