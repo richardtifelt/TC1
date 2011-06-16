@@ -7,6 +7,7 @@ gem 'rails', '3.0.8'
 
 gem 'sqlite3'
 gem 'omniauth', '~> 0.2.6'
+gem 'heroku',   '~> 2.3.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
