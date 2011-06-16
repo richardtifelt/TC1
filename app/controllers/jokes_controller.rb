@@ -22,7 +22,7 @@ class JokesController < ApplicationController
     screen_name = params[:screen_name]
     url = joke_url(joke)
     client.update("@#{screen_name} Du har fått ett Göteborgskämt! #{url}")
-    flash[:notice] = "Skämt skickat!"
+    flash[:message] = "Skämt skickat!"
     redirect_to root_path
   end
 

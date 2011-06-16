@@ -172,3 +172,14 @@ input[type="submit"].primary:hover;{
     text-align: right;
     margin-top: 20px;
 }
+
+.notice{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.message{
+	background-color:#693;
+}
+.warning{
+	background-color:#d63939;
+}
