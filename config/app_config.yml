@@ -1,0 +1,8 @@
+development:
+  twitter:
+    key: 1V9lty4RBVlA0E5TObJFw
+    secret: IBZgFxmzVQltxhg4wIYhv4F4IHrdvMhLdBplSvuj5lc
+production:
+  twitter:
+    key: 
+    secret: 
