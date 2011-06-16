@@ -57,9 +57,12 @@ a{
     color:#3d9bbc;
 }
 header{
-    display:inline-block;
-    width:100%;
+    line-height:60px;
     background:#1D1C1A;
+    /*background: #7abfd6;
+    background: -moz-linear-gradient(#1D1C1A, #32302d);
+    background: -webkit-linear-gradient(#1D1C1A, #32302d);
+    background: linear-gradient (#7abfd6, #33a2bc);*/
     color:#fff;
 }
 header h1{
@@ -77,7 +80,7 @@ article{
 article h1{
     font-size:320%;
     font-weight:bold;
-    text-shadow:#f1f1f1 5px 5px 0;
+    text-shadow:#f5f5ed 5px 5px 0;
 }
 article p{
     font-size:22px;
@@ -86,7 +89,27 @@ article p{
 div.actions{
     text-align:right;
 }
-
+input[type="text"]{
+    font-size:24px;
+    line-height:1.5em;
+    border:solid 1px #bcbbbb;
+    padding:10px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    background:#fff;
+    width:70%;
+    margin-right:1%;
+}
+input[type="text"]:focus{
+    border:solid 1px #39B2E5;
+    -moz-box-shadow: inset 0 1px 2px rgba(70,110,187,.2);
+    -webkit-box-shadow: inset 0 1px 2px rgba(70,110,187,.2);
+    box-shadow: inset 0 1px 2px rgba(70,110,187,.2);
+}
 input[type="button"], input[type="submit"]{
     margin: 0 6px 15px 0;
     padding: 6px 10px;
@@ -107,6 +130,7 @@ input[type="button"], input[type="submit"]{
     font-size: 30px;
     line-height: 100%;
 }
+
 input[type="button"]:hover, input[type="submit"]:hover{
     cursor: pointer;
     background: #33a2bc;
