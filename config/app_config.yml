@@ -4,5 +4,5 @@ development:
     secret: IBZgFxmzVQltxhg4wIYhv4F4IHrdvMhLdBplSvuj5lc
 production:
   twitter:
-    key: 
-    secret: 
+    key: RW4KqKih7fkw9N59GpffLg
+    secret: KbEsl5rBJSFbIgMDgM0zXuvnN7qoJDPENe9DK2pZhAY
