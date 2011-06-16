@@ -70,8 +70,9 @@ header h1{
     padding-left:86px;
 }
 header h1 span{
+    padding-left:20px;
     font-style:italic;
-    font-size:1rem;
+    font-size:12px;
 }
 article{
     background:url(/images/bg-conversation.png) no-repeat 0 0;
@@ -80,7 +81,7 @@ article{
 }
 article h1{
     font-style:italic;
-    font-size:320%;
+    font-size:60px;
     font-weight:bold;
     text-shadow:#f5f5ed 5px 5px 0;
 }
