@@ -12,6 +12,11 @@
     <header>
         <h1>Göteborgshumor <span>Produced at <strong>#mndtc</strong> by <a href="http://twitter.com/joakwest">Joakim</a>, <a href="http://twitter.com/martmannen">Mårten</a> & <a href="http://twitter.com/richardjohansso">Richard</a></span></h1>
     </header>
+    <% [:notice, :warning].each do |message| %>
+        <% if flash[message] %>
+            <div class="notice"><%= flash[message] %></div>
+        <% end %>
+    <% end %>
     <article>
         <%= yield %>
     </article>
