@@ -8,7 +8,9 @@
                     <option value="<%= friend[1] %>"><%= friend[0] %> (@<%= friend[1] %>)</option>
                 <% end %>
             </select>
-            <%= submit_tag("Skicka") %>
+            <div class="actions">
+                <%= submit_tag("Skicka",:class => "button") %>
+            </div>
             <h1 id="fittext" class="<%=jokes_class_name(@joke.joke)%>"><%= @joke.joke %></h1>
             <div class="actions">
                 <%= link_to("Logga ut från Twitter", logout_path, :class => "button") %>
