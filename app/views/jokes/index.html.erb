@@ -1,8 +1,9 @@
+
     <% if @friends %>
         <% form_tag 'update' do %>
             <%= hidden_field_tag(:joke_id, @joke.id) %>
-            Välj vän: 
-            <select name="screen_name">
+            <label for="name">Välj vän</label>
+            <select name="screen_name" id="name">
                 <% @friends.each do |friend| %>
                     <option value="<%= friend[1] %>"><%= friend[0] %> (@<%= friend[1] %>)</option>
                 <% end %>
