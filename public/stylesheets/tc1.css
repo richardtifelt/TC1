@@ -92,20 +92,21 @@ header{
     background: -webkit-linear-gradient(#1D1C1A, #32302d);
     background: linear-gradient (#7abfd6, #33a2bc);*/
     color:#fff;
+    height:70px;
 }
 header h1{
-    line-height:70px;
+    padding-top:5px;
     background:url(/images/gbg.png) no-repeat 10px 10px;
     padding-left:86px;
 }
 header h1 span{
-    padding-left:20px;
+    display:block;
     font-style:italic;
     font-size:12px;
 }
 article{
     background:url(/images/bg-conversation.png) no-repeat 0 0;
-    padding:0;
+    padding:5% 0;
     margin:0 auto;
 }
 article h1{
