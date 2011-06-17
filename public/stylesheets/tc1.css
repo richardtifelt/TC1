@@ -81,10 +81,13 @@ article{
 }
 article h1{
     font-style:italic;
-    font-size:40px;
+    font-size:20px;
     font-weight:bold;
     text-shadow:#f5f5ed 5px 5px 0;
     margin-bottom: 30px;
+}
+article h1.jokes-short{
+    font-size:50px;
 }
 article p{
     font-size:22px;

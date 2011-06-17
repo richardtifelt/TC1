@@ -13,7 +13,7 @@
             <%= link_to("Logga ut från Twitter", logout_path) %>
         <% end %>
     <% else %>
-        <h1 id="fittext"><%= @joke.joke %></h1>
+        <h1 id="fittext" class="<%=jokes_class_name(@joke.joke)%>"><%= @joke.joke %></h1>
         <a href="/" class="primary">Få nytt skämt!</a>
         <%= link_to("Skicka skämt till en Twitter-kompis!", "/auth/twitter", :class => "button") %>
     <% end %>
