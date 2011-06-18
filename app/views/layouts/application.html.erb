@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title><%= truncate(strip_tags(@joke.try(:joke)), :length => 100) || "Gotanjoke, #nordicruby" %></title>
     <link rel="stylesheet" href="/stylesheets/tc1.css" type="text/css" media="all">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
     <meta name="viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
@@ -30,7 +31,7 @@
 </head>
 <body>
     <header>
-        <h1>Gotanjoke <span>Made at <strong>Nordicruby</strong> by <a href="http://twitter.com/joakwest">Joakim</a>, <a href="http://twitter.com/martmannen">Mårten</a> & <a href="http://twitter.com/richardjohansso">Richard</a></span></h1>
+        <h1>Got<span class="up">An</span>Joke <span class="by">Made at <strong>Nordicruby</strong> by <a href="http://twitter.com/joakwest">Joakim</a>, <a href="http://twitter.com/martmannen">Mårten</a> & <a href="http://twitter.com/richardjohansso">Richard</a></span></h1>
     </header>
     <article>
         <% [:message, :warning].each do |message| %>

@@ -51,6 +51,12 @@ body{font:16px/1.5 Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif}a:focus
 /* ------------------------------------------------- */
 /* Notices */
 /* ------------------------------------------------- */
+.notice{
+    margin:0 1%;
+    text-align: center;
+    font-weight:bold;
+}
+.message,
 .success{
 	color:#693;
 	background:#e9f0e0;
@@ -66,6 +72,7 @@ body{font:16px/1.5 Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif}a:focus
 	background:#faf8e6;
 	border:1px solid #f0e4b2;
 }
+div.message,
 div.success,
 div.error,
 div.warning{
@@ -83,43 +90,52 @@ body{
     color:#292929;
 }
 a{
-    color:#3d9bbc;
+    color:#2f6bc6;
 }
 header{
     background:#1D1C1A;
-    /*background: #7abfd6;
-    background: -moz-linear-gradient(#1D1C1A, #32302d);
+    background: -moz-linear-gradient(#1D1C1A, #252421);
     background: -webkit-linear-gradient(#1D1C1A, #32302d);
-    background: linear-gradient (#7abfd6, #33a2bc);*/
+    background: linear-gradient (#7abfd6, #33a2bc);
+    -moz-box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+	box-shadow: 5px 5px 5px rgba(0,0,0,.2);
     color:#fff;
     height:70px;
 }
 header h1{
+    margin:0;
     padding-top:5px;
     background:url(/images/gbg.png) no-repeat 10px 10px;
-    padding-left:86px;
+    padding-left:70px;
+    height:64px;
 }
-header h1 span{
+header h1 span.by{
+    color:#fff;
     display:block;
     font-style:italic;
     font-size:10px;
+}
+header h1 span.up{
+    color:#2f6bc6;
 }
 article{
     background:url(/images/bg-conversation.png) no-repeat 0 0;
     padding:5% 0;
     margin:0 auto;
 }
-article h2{
+article p{
     font-style:italic;
     font-weight:bold;
-    text-shadow:#f5f5ed 3px 3px 0;
     margin-bottom: 30px;
     padding:0 1em;
+    color:#a7a794;
+    text-shadow:2px 2px rgba(167,167,148,.2);
 }
-article h2.jokes{
+article p.jokes{
     font-size:20px;
 }
-article h2.jokes-short{
+article p.jokes-short{
     font-size:50px;
 }
 article p{
@@ -157,7 +173,8 @@ label{
 }
 select{
     margin:0 5%;
-    font-size:18px;
+    padding:0.5em;
+    font-size:22px;
     width:90%;
     margin-bottom:5%;
 }
@@ -231,18 +248,4 @@ input[type="submit"].primary:hover;{
 
 .sharing div:first-child{
     margin-right: 5px;
-}
-
-.notice{
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #fff;
-    font-weight:bold;
-}
-.message{
-	background-color:#70A71D;
-}
-.warning{
-	background-color:#d63939;
 }

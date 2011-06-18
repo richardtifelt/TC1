@@ -9,9 +9,7 @@
         <div class="actions">
             <%= submit_tag("Skicka",:class => "primary") %>
         </div>
-
         <%= render :partial => "joke" %>
-
         <div class="actions">
             <%= link_to("Logga ut från Twitter", logout_path, :class => "button") %>
         </div>
@@ -19,7 +17,6 @@
 <% else %>
     <div id="joke">
         <%= render :partial => "joke" %>
-
         <div class="actions">
             <a href="<%= joke_path(@random_id) %>" data-pjax="article" id="new_joke" class="primary">Få nytt skämt!</a>
             <%= link_to("Skicka skämt!", "/auth/twitter", :class => "button") %>
