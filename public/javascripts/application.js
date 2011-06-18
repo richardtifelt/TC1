@@ -1,7 +1,7 @@
 TrainChallange = (function(){
     var setTitle = function(){
         $("article").bind("end.pjax", function(){
-            $("title").text($("h2#fittext").text().substr(0, 100));
+            $("title").text($("div#fittext").text().substr(0, 100));
         });
     };
     var setText = function(){
