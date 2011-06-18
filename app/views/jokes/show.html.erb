@@ -1,9 +1,5 @@
-<!-- <div class="actions">
-    <a href="/" class="primary">Skicka eget skämt!</a>
-</div> -->
 <% if @friends %>
     <% form_tag '/tweet' do %>
-        <%= hidden_field_tag(:joke_id, @joke.id) %>
         <label for="name">Välj vän</label>
         <select name="screen_name" id="name">
             <% @friends.each do |friend| %>
@@ -14,7 +10,7 @@
             <%= submit_tag("Skicka",:class => "primary") %>
         </div>
 
-        <h1 id="fittext" class="<%=jokes_class_name(@joke.joke)%>"><%= simple_format(@joke.joke) %></h1>
+        <%= render :partial => "joke" %>
 
         <div class="actions">
             <%= link_to("Logga ut från Twitter", logout_path, :class => "button") %>
@@ -22,7 +18,7 @@
     <% end %>
 <% else %>
     <div id="joke">
-        <h1 id="fittext" class="<%=jokes_class_name(@joke.joke)%>"><%= simple_format(@joke.joke) %></h1>
+        <%= render :partial => "joke" %>
 
         <div class="actions">
             <a href="<%= joke_path(@random_id) %>" data-pjax="article" id="new_joke" class="primary">Få nytt skämt!</a>

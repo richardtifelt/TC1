@@ -30,7 +30,7 @@ class JokesController < ApplicationController
   end
 
   def tweet
-    joke = Joke.find(params[:joke_id])
+    joke = Joke.find(session[:joke_id])
     screen_name = params[:screen_name]
     url = joke_url(joke)
     client.update("@#{screen_name} You just #gotanjoke! #{url}") if Rails.env.production?

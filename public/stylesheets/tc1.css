@@ -109,17 +109,17 @@ article{
     padding:5% 0;
     margin:0 auto;
 }
-article h1{
+article h2{
     font-style:italic;
     font-weight:bold;
     text-shadow:#f5f5ed 3px 3px 0;
     margin-bottom: 30px;
     padding:0 1em;
 }
-article h1.jokes{
+article h2.jokes{
     font-size:20px;
 }
-article h1.jokes-short{
+article h2.jokes-short{
     font-size:50px;
 }
 article p{
