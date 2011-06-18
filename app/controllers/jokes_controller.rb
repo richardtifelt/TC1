@@ -33,8 +33,8 @@ class JokesController < ApplicationController
     joke = Joke.find(params[:joke_id])
     screen_name = params[:screen_name]
     url = joke_url(joke)
-    client.update("@#{screen_name} You just #gotanjoke! #{url}")
-    flash[:message] = "Skämt skickat!"
+    client.update("@#{screen_name} You just #gotanjoke! #{url}") if Rails.env.production?
+    flash[:message] = "Skämt skickat#{ " (inte)" if Rails.env.development?}!"
     redirect_to root_path
   end
 
