@@ -1,11 +1,11 @@
 Tc1::Application.routes.draw do
   root :controller => "jokes", :action => "index"
-  resources :jokes, :except => :update
+  resources :jokes, :only => [:index, :show]
   
   match 'auth/twitter/callback', :controller => 'auth', :action => 'redirect'
   match 'auth/failure', :controller => 'auth', :action => 'failed'
   
-  match 'update', :controller => 'jokes', :action => 'update'
+  match 'tweet',  :controller => 'jokes', :action => 'tweet'
   match 'logout', :controller => 'jokes', :action => 'logout'
   
   # The priority is based upon order of creation:
