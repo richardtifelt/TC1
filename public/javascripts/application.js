@@ -8,13 +8,14 @@ TrainChallange = (function(){
       $("#fittext").fitText(1.2);  
     };
     var initPjax = function(){
-        $('a[data-pjax]').pjax('article');
+        $('a[data-pjax]').pjax('article', {timeout: 2000});
     };
     var getJoke = function(){
         if($('#joke-url').length > 0){
             $.pjax({
                 url: $('#joke-url').data('url'),
-                container: 'article'
+                container: 'article',
+                timeout: 2000
             });
         }
     };
