@@ -218,9 +218,19 @@ input[type="submit"].primary:hover;{
     background: #6aa417;    
 }
 
-.facebook_like{
-    text-align: right;
-    margin-top: 20px;
+.sharing{
+    text-align: center;
+    margin: 30px auto;
+}
+
+.sharing div{
+    vertical-align: top;
+    width: 55px;
+    display: inline-block;
+}
+
+.sharing div:first-child{
+    margin-right: 5px;
 }
 
 .notice{

@@ -27,6 +27,11 @@
     </div>
 <% end %>
 
-<div class="facebook_like">
-    <iframe src="http://www.facebook.com/plugins/like.php?app_id=225510640812214&amp;href=<%= url_encode(joke_url(@joke)) %>&amp;send=false&amp;layout=standard&amp;width=300&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:80px;" allowTransparency="true"></iframe>    
+<div class="sharing">
+    <div>
+        <a href="http://twitter.com/share?url=<%= url_encode(request.domain) %>" class="twitter-share-button" data-count="vertical">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </div>
+    <div>
+        <iframe src="http://www.facebook.com/plugins/like.php?app_id=137347343007578&amp;href=<%= url_encode(request.domain) %>&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowTransparency="true"> </iframe>
+    </div>
 </div>
