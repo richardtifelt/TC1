@@ -1,4 +1,9 @@
 TrainChallange = (function(){
+    var setTitle = function(){
+        $("article").bind("end.pjax", function(){
+            $("title").text($("h2#fittext").text().substr(0, 100));
+        });
+    };
     var setText = function(){
       $("#fittext").fitText(1.2);  
     };
@@ -18,6 +23,7 @@ TrainChallange = (function(){
             setText();
             initPjax();
             getJoke();
+            setTitle();
         }
     };
 })();
