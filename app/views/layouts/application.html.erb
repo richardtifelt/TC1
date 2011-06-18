@@ -11,19 +11,22 @@
     <script src="/javascripts/jquery.fittext.js"></script>
     <script src="/javascripts/application.js"></script>
     <script src="/javascripts/jquery.pjax.js"></script>
-    <script type="text/javascript">
+    
+    <% if Rails.env.production? %>
+        <script type="text/javascript">
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-24030227-1']);
-      _gaq.push(['_trackPageview']);
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-24030227-1']);
+          _gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
 
-    </script>
+        </script>
+    <% end %>
 </head>
 <body>
     <header>
@@ -39,26 +42,27 @@
         <%= yield %>
     </article>
 
-    <!-- Chartbeat start -->
-    <script type="text/javascript">
-    var _sf_async_config={uid:25361,domain:"gotanjoke.heroku.com"};
-    (function(){
-      function loadChartbeat() {
-        window._sf_endpt=(new Date()).getTime();
-        var e = document.createElement('script');
-        e.setAttribute('language', 'javascript');
-        e.setAttribute('type', 'text/javascript');
-        e.setAttribute('src',
-           (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
-           "js/chartbeat.js");
-        document.body.appendChild(e);
-      }
-      var oldonload = window.onload;
-      window.onload = (typeof window.onload != 'function') ?
-         loadChartbeat : function() { oldonload(); loadChartbeat(); };
-    })();
-    </script>
-    <!-- Chartbeat end -->
-    
+    <% if Rails.env.production? %>
+        <!-- Chartbeat start -->
+        <script type="text/javascript">
+        var _sf_async_config={uid:25361,domain:"gotanjoke.heroku.com"};
+        (function(){
+          function loadChartbeat() {
+            window._sf_endpt=(new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src',
+               (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+               "js/chartbeat.js");
+            document.body.appendChild(e);
+          }
+          var oldonload = window.onload;
+          window.onload = (typeof window.onload != 'function') ?
+             loadChartbeat : function() { oldonload(); loadChartbeat(); };
+        })();
+        </script>
+        <!-- Chartbeat end -->
+    <% end %>
 </body>
 </html>
