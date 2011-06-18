@@ -5,11 +5,12 @@ gem 'rails', '3.0.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'omniauth', '~> 0.2.6'
-gem 'heroku',   '~> 2.3.0'
-gem 'rake',     '~> 0.9.2'
-gem 'twitter_oauth'
+gem 'sqlite3',        '~> 1.3.3'
+gem 'omniauth',       '~> 0.2.6'
+gem 'heroku',         '~> 2.3.0'
+gem 'rake',           '~> 0.9.2'
+gem 'twitter_oauth',  '~> 0.4.3'
+gem 'newrelic_rpm',   '~> 3.1.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
