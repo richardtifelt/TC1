@@ -112,7 +112,7 @@ article{
 article h1{
     font-style:italic;
     font-weight:bold;
-    text-shadow:#f5f5ed 5px 5px 0;
+    text-shadow:#f5f5ed 3px 3px 0;
     margin-bottom: 30px;
     padding:0 1em;
 }
@@ -124,7 +124,6 @@ article h1.jokes-short{
 }
 article p{
     font-size:22px;
-    text-align:right;
 }
 div.actions{
     text-align:center;
@@ -226,10 +225,13 @@ input[type="submit"].primary:hover;{
 
 .notice{
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+    font-weight:bold;
 }
 .message{
-	background-color:#693;
+	background-color:#70A71D;
 }
 .warning{
 	background-color:#d63939;

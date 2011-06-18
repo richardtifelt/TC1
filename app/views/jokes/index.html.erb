@@ -1,28 +1,31 @@
-
-    <% if @friends %>
-        <% form_tag 'update' do %>
-            <%= hidden_field_tag(:joke_id, @joke.id) %>
-            <label for="name">Välj vän</label>
-            <select name="screen_name" id="name">
-                <% @friends.each do |friend| %>
-                    <option value="<%= friend[1] %>"><%= friend[0] %> (@<%= friend[1] %>)</option>
-                <% end %>
-            </select>
-            <div class="actions">
-                <%= submit_tag("Skicka",:class => "primary") %>
-            </div>
-            <h1 id="fittext" class="<%=jokes_class_name(@joke.joke)%>"><%= @joke.joke %></h1>
-            <div class="actions">
-                <%= link_to("Logga ut från Twitter", logout_path, :class => "button") %>
-            </div>
-        <% end %>
-    <% else %>
-        <h1 id="fittext" class="<%=jokes_class_name(@joke.joke)%>"><%= @joke.joke %></h1>
+<% if @friends %>
+    <% form_tag 'update' do %>
+        <%= hidden_field_tag(:joke_id, @joke.id) %>
+        <label for="name">Välj vän</label>
+        <select name="screen_name" id="name">
+            <% @friends.each do |friend| %>
+                <option value="<%= friend[1] %>"><%= friend[0] %> (@<%= friend[1] %>)</option>
+            <% end %>
+        </select>
         <div class="actions">
-            <a href="/" class="primary">Få nytt skämt!</a>
-            <%= link_to("Skicka skämt!", "/auth/twitter", :class => "button") %>
+            <%= submit_tag("Skicka",:class => "primary") %>
+        </div>
+        
+        <h1 id="fittext" class="<%=jokes_class_name(@joke.joke)%>"><%= joke_format(@joke.joke) %></h1>
+        
+        <div class="actions">
+            <%= link_to("Logga ut från Twitter", logout_path, :class => "button") %>
         </div>
     <% end %>
+<% else %>
+
+    <h1 id="fittext" class="<%=jokes_class_name(@joke.joke)%>"><%= simple_format(@joke.joke) %></h1>
+    
+    <div class="actions">
+        <a href="/new" data-pjax="#main" class="primary">Få nytt skämt!</a>
+        <%= link_to("Skicka skämt!", "/auth/twitter", :class => "button") %>
+    </div>
+<% end %>
 
 <div class="facebook_like">
     <iframe src="http://www.facebook.com/plugins/like.php?app_id=225510640812214&amp;href=<%= url_encode(joke_url(@joke)) %>&amp;send=false&amp;layout=standard&amp;width=300&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:80px;" allowTransparency="true"></iframe>    
