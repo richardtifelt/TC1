@@ -2,7 +2,7 @@
     <a href="/" class="primary">Skicka eget skämt!</a>
 </div> -->
 <% if @friends %>
-    <% form_tag 'update' do %>
+    <% form_tag 'tweet' do %>
         <%= hidden_field_tag(:joke_id, @joke.id) %>
         <label for="name">Välj vän</label>
         <select name="screen_name" id="name">
