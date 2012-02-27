@@ -10,7 +10,6 @@ gem 'omniauth',       '~> 0.2.6'
 gem 'heroku',         '~> 2.3.0'
 gem 'rake',           '~> 0.9.2'
 gem 'twitter_oauth',  '~> 0.4.3'
-gem 'newrelic_rpm',   '~> 3.1.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
